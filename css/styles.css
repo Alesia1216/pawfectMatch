@@ -1,6 +1,51 @@
+:root {
+    --sidebar-width: 150px;
+}
+
+body{
+    background-color: #f8f7f2;
+}
+
+aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: #718075;
+}
+
+header {
+    position: fixed;
+    top: 0;
+    left: var(--sidebar-width);
+    right: 0;
+    height: 70px;
+    z-index: 1000;
+    background-color: #77a88b;
+}
+
+main {
+    margin-left: var(--sidebar-width);
+    padding-top: 90px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
 .pet-image {
     width: 100px;
     height: 100px;
     object-fit: cover;
     border-radius: 20%;
+}
+
+.btnNav{
+    color: #34483d;
+    background-color: #718075;
+    i,p {
+        font-size: 1.5rem;
+    }
+    h2{
+        font-size: 1rem;
+    }
 }
