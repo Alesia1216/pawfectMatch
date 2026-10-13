@@ -1,51 +1,129 @@
 :root {
     --sidebar-width: 150px;
+    --verdeGris: #718075;
+    --verdeOscuro: #34483d;
+    --verdeClaro: #77a88b;
+    --bgCrema: #f8f7f2;
+    --melocoton: #e6a58c;
+}
+
+/* Ocultar todas las secciones */
+.tab-section {
+    display: none;
+}
+
+/* Mostrar únicamente la sección seleccionada */
+.tab-section.active {
+    display: block;
+}
+
+/* Estilo de la pestaña seleccionada */
+.btnNav.active {
+    background-color: #77A88B;
+    color: #FFFFFF;
+    border: none;
+}
+
+/* Transición visual para los botones */
+.btnNav {
+    border: none;
+    background-color: transparent;
+    color: #34483D;
+    cursor: pointer;
+}
+
+.btnNav:hover {
+    background-color: #E6A58C;
+    color: #FFFFFF;
 }
 
 body{
-    background-color: #f8f7f2;
-}
+    background-color: var(--bgCrema);
+    font-family: "Kavoon", serif;
+    p{
+        color: var(--verdeGris);
+    }
 
-aside {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: var(--sidebar-width);
-    height: 100vh;
-    background-color: #718075;
-}
+    h2{
+        color: var(--verdeOscuro);
+    }
 
-header {
+
+    header {
     position: fixed;
     top: 0;
     left: var(--sidebar-width);
     right: 0;
     height: 70px;
     z-index: 1000;
-    background-color: #77a88b;
-}
+    background-color: var(--verdeClaro);
+    }
 
-main {
+
+    aside {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: var(--sidebar-width);
+    height: 100vh;
+    background-color: var(--verdeGris);
+
+
+        .btnNav{
+            color: var(--verdeOscuro);
+            background-color: var(--verdeGris);
+            i,p {
+                font-size: 1.5rem;
+            }
+            h2{
+                font-size: 1rem;
+            }
+        }    
+
+    }
+
+
+    main {
     margin-left: var(--sidebar-width);
     padding-top: 90px;
     padding-left: 20px;
     padding-right: 20px;
+
+        .logo{
+            background-color: var(--verdeClaro);
+            border-radius: 30%;
+            padding: 10px;
+
+        }
+
+        #intro {
+            background-color: white;
+        }
+
+        #data {
+            p{
+                color: var(--melocoton);
+            }
+        }
+        
+        .pet-image {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 20%;
+        }
+
+        .petName {
+            color: var(--verdeClaro);
+        }
+
+
+    }
+
+
+
 }
 
-.pet-image {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 20%;
-}
 
-.btnNav{
-    color: #34483d;
-    background-color: #718075;
-    i,p {
-        font-size: 1.5rem;
-    }
-    h2{
-        font-size: 1rem;
-    }
-}
+
+

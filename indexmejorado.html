@@ -7,6 +7,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -24,20 +27,20 @@
 
         <nav class="d-flex flex-column justify-content-around gap-3 p-3 shadow h-100">
 
-            <button onclick="location.href='#home'" class="btnNav d-flex flex-column align-items-center gap-2 rounded-3 p-2">
-                <i class="bi bi-house-heart"></i>                
+            <button data-section="home" class="btnNav d-flex flex-column align-items-center gap-2 rounded-3 p-2">
+                <img src="./img/home.svg" alt="Pet Image" class="pet-image">
                 <h2>Home</h2>
             </button>
-            <button class="btnNav d-flex flex-column align-items-center gap-2 rounded-3 p-2">
-                <p>🐾</p>
+            <button data-section="pets" class="btnNav d-flex flex-column align-items-center gap-2 rounded-3 p-2">
+                <img src="./img/animals.svg" alt="Pet Image" class="pet-image">
                 <h2>Pets</h2>
             </button>
-            <button class="btnNav d-flex flex-column align-items-center gap-2 rounded-3 p-2">
-                <i class="bi bi-heart"></i>
+            <button data-section="adoptions" class="btnNav d-flex flex-column align-items-center gap-2 rounded-3 p-2">
+                <img src="./img/adoption.svg" alt="Pet Image" class="pet-image">
                 <h2>Adoptions</h2>
             </button>
-            <button class="btnNav d-flex flex-column align-items-center gap-2 rounded-3 p-2">
-                <i class="bi bi-bar-chart-fill"></i>                
+            <button data-section="stats" class="btnNav d-flex flex-column align-items-center gap-2 rounded-3 p-2">
+                <img src="./img/stats.svg" alt="Pet Image" class="pet-image">
                 <h2>Stats</h2>
             </button>
 
@@ -45,37 +48,44 @@
 
     </aside>
 
-    <main>
-        <section id="home">
-            <article id="intro">
+    <main class="tab-content">
+        <section id="home" class="tab-section active">
+            <article id="title" class="d-flex flex-row align-items-center p-3 my-2 gap-2">
+                <img src="./img/logo.svg" alt="Logo" class="logo">
+                <div id="text" class="d-flex flex-column gap-2">
+                    <h2>¡Bienvenido a Pawfect Match!</h2>
+                    <p>Tu lugar para encontrar a tu compañero peludo ideal. Explora nuestras opciones de adopción y encuentra a tu nuevo mejor amigo.</p>
+                </div>
+            </article>
+            <article id="intro" class="d-flex flex-column gap-3 bg-white rounded p-3 m-2 shadow">
                 <h2>¿Quienes somos?</h2>
                 <p>En Pawfect Match nos dedicamos a conectar a familias con sus nuevos amigos de cuatro patas. Nuestra misión es facilitar adopciones responsables y asegurar que cada perro o gato encuentre un hogar amoroso.</p>
             </article>
-            <article id="data" class="d-flex justify-content-around">
+            <article id="data" class="d-flex justify-content-around my-2">
                 <div id="welcomed" class="card rounded p-3 shadow d-inline-flex flex-column align-items-center">
-                    <h2>Animales acogidos</h2>
-                    <p>128</p>
+                    <h2>🐾 Animales acogidos</h2>
+                    <p class="fs-1 fw-bold">128</p>
                 </div>
                 <div id="adopted" class="card rounded p-3 shadow d-inline-flex flex-column align-items-center">
-                    <h2>Adopcines</h2>
-                    <p>63</p>
+                    <h2><i class="bi bi-heart"></i>Adopciones</h2>
+                    <p class="fs-1 fw-bold">63</p>
                 </div>
             </article>
-            <article id="petsPreview" class="justify-content-center align-items-center d-flex flex-column gap-3">
+            <article id="petsPreview" class="justify-content-center d-flex flex-column gap-3 bg-white rounded p-3 shadow my-3">
                 <h2>Animales en adopción</h2>
-                <div id="petCards" class="d-flex justify-content-center gap-4">
-                    <div class="card d-flex flex-row align-items-center gap-3">
+                <div id="petCards" class="d-flex justify-content-around gap-3">
+                    <div class="card d-flex flex-row align-items-center gap-3 border-0">
                         <img src="./img/perro1.jpg" alt="Pet Image" class="pet-image">
-                        <div id="text" class="d-flex flex-column align-items-center gap-2">
-                            <h2>Max</h2>
+                        <div id="text" class="d-flex flex-column align-items-center">
+                            <h2 class="petName">Max</h2>
                             <p>Macho 5 meses</p>
                             <button class="btn btn-success rounded-3">Disponible</button>
                         </div>
                     </div>
-                    <div class="card d-flex flex-row align-items-center gap-3">
+                    <div class="card d-flex flex-row align-items-center gap-3 border-0">
                         <img src="./img/gato1.jpeg" alt="Pet Image" class="pet-image">
-                        <div id="text" class="d-flex flex-column align-items-center gap-2">
-                            <h2>Luna</h2>
+                        <div id="text" class="d-flex flex-column align-items-center">
+                            <h2 class="petName">Luna</h2>
                             <p>Hembra 3 meses</p>
                             <button class="btn btn-danger rounded-3">Urgente</button>
                         </div>
@@ -84,15 +94,39 @@
             </article>
         </section>
 
-        <section id="pets">
+
+
+
+        <section id="pets" class="tab-section">
+
+             <article id="title" class="d-flex flex-row align-items-center p-3 my-2 gap-2">
+                <img src="./img/logo.svg" alt="Logo" class="logo">
+                <div id="text" class="d-flex flex-column gap-2">
+                    <h2>Animales en adopción</h2>
+                    <p>Consulta y gestiona los animales disponibles para la adopción.</p>
+                </div>
+            </article>
 
         </section>
 
-        <section id="adoptions">
+
+
+
+
+
+
+        <section id="adoptions" class="tab-section">
 
         </section>
 
-        <section id="stats">
+
+
+
+
+
+
+
+        <section id="stats" class="tab-section">
 
         </section>
 
@@ -100,5 +134,34 @@
 
     
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    ```html
+    <script>
+        const navButtons = document.querySelectorAll('.btnNav');
+        const sections = document.querySelectorAll('.tab-section');
+
+        navButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Obtener el identificador de la sección
+                const sectionId = button.dataset.section;
+
+                // Ocultar todas las secciones
+                sections.forEach(section => {
+                    section.classList.remove('active');
+                });
+
+                // Mostrar la sección seleccionada
+                document.getElementById(sectionId).classList.add('active');
+
+                // Quitar el estado activo de todos los botones
+                navButtons.forEach(navButton => {
+                    navButton.classList.remove('active');
+                });
+
+                // Marcar como activo el botón seleccionado
+                button.classList.add('active');
+            });
+        });
+    </script>
+    ```
 </body>
 </html>
