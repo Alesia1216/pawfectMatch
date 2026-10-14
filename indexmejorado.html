@@ -280,8 +280,15 @@
         });
 
         function limpiarFiltros() {
-            document.querySelectorAll('.filtros-animales select').forEach(select => {
+            const filtros = document.querySelectorAll('.filtrosAnimales select');
+
+            filtros.forEach(select => {
                 select.selectedIndex = 0;
+
+                // Notificar que el valor ha cambiado
+                select.dispatchEvent(new Event('change', {
+                    bubbles: true
+                }));
             });
         }
     </script>
