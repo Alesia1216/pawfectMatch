@@ -1,66 +1,59 @@
 :root {
-    --sidebar-width: 150px;
-    --verdeGris: #718075;
-    --verdeOscuro: #34483d;
-    --verdeClaro: #77a88b;
-    --bgCrema: #f8f7f2;
-    --melocoton: #e6a58c;
+  --sidebar-width: 150px;
+  --header-height: 70px;
+  --content-gap: 20px;
+
+  --verdeGris: #718075;
+  --verdeOscuro: #34483d;
+  --verdeClaro: #77a88b;
+  --bgCrema: #f8f7f2;
+  --melocoton: #e6a58c;
 }
 
 /* Ocultar todas las secciones */
 .tab-section {
-    display: none;
+  display: none;
+  margin-top: 20px;
 }
 
 /* Mostrar únicamente la sección seleccionada */
 .tab-section.active {
-    display: block;
+  display: block;
+  animation: fadeIn 1s ease both;
 }
 
-/* Estilo de la pestaña seleccionada */
-.btnNav.active {
-    background-color: #77A88B;
-    color: #FFFFFF;
-    border: none;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
 }
 
-/* Transición visual para los botones */
-.btnNav {
-    border: none;
-    background-color: transparent;
-    color: #34483D;
-    cursor: pointer;
-}
+body {
+  background-color: var(--bgCrema);
+  font-family: "Kavoon", serif;
+  p {
+    color: var(--verdeGris);
+  }
 
-.btnNav:hover {
-    background-color: #E6A58C;
-    color: #FFFFFF;
-}
+  h2 {
+    color: var(--verdeOscuro);
+  }
 
-body{
-    background-color: var(--bgCrema);
-    font-family: "Kavoon", serif;
-    p{
-        color: var(--verdeGris);
-    }
-
-    h2{
-        color: var(--verdeOscuro);
-    }
-
-
-    header {
+  header {
     position: fixed;
     top: 0;
     left: var(--sidebar-width);
     right: 0;
-    height: 70px;
+    height: var(--header-height);
     z-index: 1000;
     background-color: var(--verdeClaro);
-    }
+  }
 
-
-    aside {
+  aside {
     position: fixed;
     top: 0;
     left: 0;
@@ -68,62 +61,103 @@ body{
     height: 100vh;
     background-color: var(--verdeGris);
 
+    .btnNav {
+      border: none;
+      background-color: transparent;
+      cursor: pointer;
+      color: var(--verdeOscuro);
+      i,
+      p {
+        font-size: 1.5rem;
+      }
+      h2 {
+        font-size: 1rem;
+      }
 
-        .btnNav{
-            color: var(--verdeOscuro);
-            background-color: var(--verdeGris);
-            i,p {
-                font-size: 1.5rem;
-            }
-            h2{
-                font-size: 1rem;
-            }
-        }    
+      &.active {
+        background-color: #77a88b;
+        color: #ffffff;
+        border: none;
+      }
 
+      &:hover {
+        background-color: #e6a58c;
+        color: #ffffff;
+      }
     }
+  }
 
-
-    main {
+  main {
     margin-left: var(--sidebar-width);
-    padding-top: 90px;
+    padding-top: calc(var(--header-height) + var(--content-gap));
     padding-left: 20px;
     padding-right: 20px;
 
-        .logo{
-            background-color: var(--verdeClaro);
-            border-radius: 30%;
-            padding: 10px;
+    #home {
+      .logo {
+        background-color: var(--verdeClaro);
+        border-radius: 30%;
+        padding: 10px;
+      }
 
+      #intro {
+        background-color: white;
+      }
+
+      #data {
+        p {
+          color: var(--melocoton);
         }
+      }
 
-        #intro {
-            background-color: white;
-        }
+      .pet-image {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+        border-radius: 20%;
+      }
 
-        #data {
-            p{
-                color: var(--melocoton);
-            }
-        }
-        
-        .pet-image {
-            width: 120px;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 20%;
-        }
-
-        .petName {
-            color: var(--verdeClaro);
-        }
-
-
+      .petName {
+        color: var(--verdeClaro);
+      }
     }
 
+    #pets {
+      #filter {
+        #searchBar{}
+        nav {
+          ul {
+            li {
+              a.page-link {
+                color: var(--verdeClaro);
+                background-color: transparent;
+                border-color: var(--verdeClaro);
 
+                &:hover {
+                  background-color: var(--verdeClaro);
+                  color: white;
+                }
 
+                &.active {
+                  background-color: var(--verdeOscuro);
+                  border-color: var(--verdeOscuro);
+                  color: white;
+                }
+
+                &:focus {
+                  box-shadow: none;
+                }
+              }
+            }
+          }
+        }
+        #filtrosAnimales{
+
+            i{
+                
+            }
+        }
+      }
+    }
+  }
 }
-
-
-
-

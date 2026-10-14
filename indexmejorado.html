@@ -27,7 +27,7 @@
 
         <nav class="d-flex flex-column justify-content-around gap-3 p-3 shadow h-100">
 
-            <button data-section="home" class="btnNav d-flex flex-column align-items-center gap-2 rounded-3 p-2">
+            <button data-section="home" class="btnNav active d-flex flex-column align-items-center gap-2 rounded-3 p-2">
                 <img src="./img/home.svg" alt="Pet Image" class="pet-image">
                 <h2>Home</h2>
             </button>
@@ -57,21 +57,21 @@
                     <p>Tu lugar para encontrar a tu compañero peludo ideal. Explora nuestras opciones de adopción y encuentra a tu nuevo mejor amigo.</p>
                 </div>
             </article>
-            <article id="intro" class="d-flex flex-column gap-3 bg-white rounded p-3 m-2 shadow">
+            <article id="intro" class="d-flex flex-column gap-3 bg-white rounded-4 p-3 m-2 shadow">
                 <h2>¿Quienes somos?</h2>
                 <p>En Pawfect Match nos dedicamos a conectar a familias con sus nuevos amigos de cuatro patas. Nuestra misión es facilitar adopciones responsables y asegurar que cada perro o gato encuentre un hogar amoroso.</p>
             </article>
             <article id="data" class="d-flex justify-content-around my-2">
-                <div id="welcomed" class="card rounded p-3 shadow d-inline-flex flex-column align-items-center">
+                <div id="welcomed" class="card rounded-4 p-3 shadow d-inline-flex flex-column align-items-center">
                     <h2>🐾 Animales acogidos</h2>
                     <p class="fs-1 fw-bold">128</p>
                 </div>
-                <div id="adopted" class="card rounded p-3 shadow d-inline-flex flex-column align-items-center">
+                <div id="adopted" class="card rounded-4 p-3 shadow d-inline-flex flex-column align-items-center">
                     <h2><i class="bi bi-heart"></i>Adopciones</h2>
                     <p class="fs-1 fw-bold">63</p>
                 </div>
             </article>
-            <article id="petsPreview" class="justify-content-center d-flex flex-column gap-3 bg-white rounded p-3 shadow my-3">
+            <article id="petsPreview" class="justify-content-center d-flex flex-column gap-3 bg-white rounded-4 p-3 shadow my-3">
                 <h2>Animales en adopción</h2>
                 <div id="petCards" class="d-flex justify-content-around gap-3">
                     <div class="card d-flex flex-row align-items-center gap-3 border-0">
@@ -106,6 +106,108 @@
                     <p>Consulta y gestiona los animales disponibles para la adopción.</p>
                 </div>
             </article>
+            
+            <article id="filter" class="d-flex flex-column align-items-center p-3 my-2 gap-2">
+                <div id="searchBar" class="form-floating mb-3">
+                    <input type="text" class="form-control w-auto" id="floatingInput" placeholder="Busca aqui tu animal">
+                    <label for="floatingInput" class="d-flex flex-row justify-content-center gap-3"><i class="bi bi-search"></i>Busca aqui tu animal</label>
+                </div>
+                <nav id="pageNavigation" aria-label="PageNavigation">
+                    <ul class="pagination">
+                        <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true"><i class="bi bi-arrow-left"></i></span>
+                        </a>
+                        </li>
+                        <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="filtrosAnimales d-flex flex-column align-items-center gap-3 p-3 my-2 rounded-4 shadow">
+                    <div class="filtros-titulo d-flex flex-row align-items-center gap-2">
+                        <i class="bi bi-funnel"></i>
+                        <h4>Filtros</h4>
+                    </div>
+
+                    <!-- Filtros -->
+                    <div class="filtros-campos d-flex flex-wrap justify-content-center gap-3">
+
+                        <div class="filtro">
+                            <label for="especie" class="form-label">Especie</label>
+                            <select id="especie" class="form-select">
+                                <option value="">Todas</option>
+                                <option value="perro">Perro</option>
+                                <option value="gato">Gato</option>
+                                <option value="conejo">Conejo</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="filtro">
+                            <label for="raza" class="form-label">Raza</label>
+                            <select id="raza" class="form-select">
+                                <option value="">Todas</option>
+                                <option value="mestizo">Mestizo</option>
+                                <option value="pastor-aleman">Pastor alemán</option>
+                                <option value="labrador">Labrador</option>
+                                <option value="siames">Siamés</option>
+                            </select>
+                        </div>
+
+                        <div class="filtro">
+                            <label for="edad" class="form-label">Edad</label>
+                            <select id="edad" class="form-select">
+                                <option value="">Todas</option>
+                                <option value="cachorro">Cachorro</option>
+                                <option value="joven">Joven</option>
+                                <option value="adulto">Adulto</option>
+                                <option value="senior">Senior</option>
+                            </select>
+                        </div>
+
+                        <div class="filtro">
+                            <label for="sexo" class="form-label">Sexo</label>
+                            <select id="sexo" class="form-select">
+                                <option value="">Todos</option>
+                                <option value="macho">Macho</option>
+                                <option value="hembra">Hembra</option>
+                            </select>
+                        </div>
+
+                        <div class="filtro">
+                            <label for="ciudad" class="form-label">Ciudad</label>
+                            <select id="ciudad" class="form-select">
+                                <option value="">Todas</option>
+                                <option value="valencia">Valencia</option>
+                                <option value="alicante">Alicante</option>
+                                <option value="castellon">Castellón</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- Restablecer filtros -->
+                    <button type="button"
+                            class="btn-reset-filtros"
+                            onclick="limpiarFiltros()"
+                            aria-label="Restablecer filtros"
+                            title="Restablecer filtros">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </button>
+                </div>
+                
+            </article>
+
+
+
+            
 
         </section>
 
@@ -116,6 +218,14 @@
 
 
         <section id="adoptions" class="tab-section">
+
+             <article id="title" class="d-flex flex-row align-items-center p-3 my-2 gap-2">
+                <img src="./img/logo.svg" alt="Logo" class="logo">
+                <div id="text" class="d-flex flex-column gap-2">
+                    <h2>Adopciones</h2>
+                    <p>Consulta y gestiona las adopciones realizadas.</p>
+                </div>
+            </article>
 
         </section>
 
@@ -128,6 +238,13 @@
 
         <section id="stats" class="tab-section">
 
+            <article id="title" class="d-flex flex-row align-items-center p-3 my-2 gap-2">
+                <img src="./img/logo.svg" alt="Logo" class="logo">
+                <div id="text" class="d-flex flex-column gap-2">
+                    <h2>Estadísticas de adopción</h2>
+                    <p>Consulta y analiza las estadísticas de las adopciones para tomar mejores decisiones</p>
+                </div>
+            </article>
         </section>
 
     </main>
@@ -161,6 +278,12 @@
                 button.classList.add('active');
             });
         });
+
+        function limpiarFiltros() {
+            document.querySelectorAll('.filtros-animales select').forEach(select => {
+                select.selectedIndex = 0;
+            });
+        }
     </script>
     ```
 </body>
