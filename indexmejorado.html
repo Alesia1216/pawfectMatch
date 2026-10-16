@@ -8,8 +8,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="./css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kavoon&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -107,6 +107,128 @@
                 </div>
             </article>
             
+            <article id="filter" class="d-flex flex-column align-items-center p-3 my-2 gap-2">
+                <div id="searchBarAndPagination" class="form-floating mb-3 d-flex felx-row justify-content-between align-items-center gap-3">
+                    <input type="text" class="form-control w-auto" id="floatingInput" placeholder="Busca aqui tu animal">
+                    <label for="floatingInput" class="d-flex flex-row justify-content-center gap-3"><i class="bi bi-search"></i>Busca aqui tu animal</label>
+                
+                    <nav id="pageNavigation" aria-label="PageNavigation">
+                        <ul class="pagination">
+                            <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Previous">
+                                <span aria-hidden="true"><i class="bi bi-arrow-left"></i></span>
+                            </a>
+                            </li>
+                            <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                            </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+
+                <div class="filtrosAnimales d-flex flex-column align-items-center gap-3 p-3 my-2 rounded-4 shadow">
+                    <div class="filtros-titulo d-flex flex-row align-items-center gap-2">
+                        <i class="bi bi-funnel"></i>
+                        <h4>Filtros</h4>
+                    </div>
+
+                    <!-- Filtros -->
+                    <div class="filtros-campos d-flex flex-wrap justify-content-center gap-3">
+
+                        <div class="filtro">
+                            <label for="especie" class="form-label">Especie</label>
+                            <select id="especie" class="form-select">
+                                <option value="">Todas</option>
+                                <option value="perro">Perro</option>
+                                <option value="gato">Gato</option>
+                                <option value="conejo">Conejo</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="filtro">
+                            <label for="raza" class="form-label">Raza</label>
+                            <select id="raza" class="form-select">
+                                <option value="">Todas</option>
+                                <option value="mestizo">Mestizo</option>
+                                <option value="pastor-aleman">Pastor alemán</option>
+                                <option value="labrador">Labrador</option>
+                                <option value="siames">Siamés</option>
+                            </select>
+                        </div>
+
+                        <div class="filtro">
+                            <label for="edad" class="form-label">Edad</label>
+                            <select id="edad" class="form-select">
+                                <option value="">Todas</option>
+                                <option value="cachorro">Cachorro</option>
+                                <option value="joven">Joven</option>
+                                <option value="adulto">Adulto</option>
+                                <option value="senior">Senior</option>
+                            </select>
+                        </div>
+
+                        <div class="filtro">
+                            <label for="sexo" class="form-label">Sexo</label>
+                            <select id="sexo" class="form-select">
+                                <option value="">Todos</option>
+                                <option value="macho">Macho</option>
+                                <option value="hembra">Hembra</option>
+                            </select>
+                        </div>
+
+                        <div class="filtro">
+                            <label for="ciudad" class="form-label">Ciudad</label>
+                            <select id="ciudad" class="form-select">
+                                <option value="">Todas</option>
+                                <option value="valencia">Valencia</option>
+                                <option value="alicante">Alicante</option>
+                                <option value="castellon">Castellón</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- Restablecer filtros -->
+                    <button type="button"
+                            class="btn-reset-filtros"
+                            onclick="limpiarFiltros()"
+                            aria-label="Restablecer filtros"
+                            title="Restablecer filtros">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </button>
+                </div>
+                
+            </article>
+
+
+
+            
+
+        </section>
+
+
+
+
+
+
+
+        <section id="adoptions" class="tab-section">
+
+             <article id="title" class="d-flex flex-row align-items-center p-3 my-2 gap-2">
+                <img src="./img/logo.svg" alt="Logo" class="logo">
+                <div id="text" class="d-flex flex-column gap-2">
+                    <h2>Adopciones</h2>
+                    <p>Consulta y gestiona las adopciones realizadas.</p>
+                </div>
+            </article>
+
+
             <article id="filter" class="d-flex flex-column align-items-center p-3 my-2 gap-2">
                 <div id="searchBar" class="form-floating mb-3">
                     <input type="text" class="form-control w-auto" id="floatingInput" placeholder="Busca aqui tu animal">
@@ -207,26 +329,6 @@
 
 
 
-            
-
-        </section>
-
-
-
-
-
-
-
-        <section id="adoptions" class="tab-section">
-
-             <article id="title" class="d-flex flex-row align-items-center p-3 my-2 gap-2">
-                <img src="./img/logo.svg" alt="Logo" class="logo">
-                <div id="text" class="d-flex flex-column gap-2">
-                    <h2>Adopciones</h2>
-                    <p>Consulta y gestiona las adopciones realizadas.</p>
-                </div>
-            </article>
-
         </section>
 
 
@@ -245,6 +347,109 @@
                     <p>Consulta y analiza las estadísticas de las adopciones para tomar mejores decisiones</p>
                 </div>
             </article>
+
+
+
+            <article id="filter" class="d-flex flex-column align-items-center p-3 my-2 gap-2">
+                <div id="searchBar" class="form-floating mb-3">
+                    <input type="text" class="form-control w-auto" id="floatingInput" placeholder="Busca aqui tu animal">
+                    <label for="floatingInput" class="d-flex flex-row justify-content-center gap-3"><i class="bi bi-search"></i>Busca aqui tu animal</label>
+                </div>
+                <nav id="pageNavigation" aria-label="PageNavigation">
+                    <ul class="pagination">
+                        <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true"><i class="bi bi-arrow-left"></i></span>
+                        </a>
+                        </li>
+                        <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true"><i class="bi bi-arrow-right"></i></span>
+                        </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="filtrosAnimales d-flex flex-column align-items-center gap-3 p-3 my-2 rounded-4 shadow">
+                    <div class="filtros-titulo d-flex flex-row align-items-center gap-2">
+                        <i class="bi bi-funnel"></i>
+                        <h4>Filtros</h4>
+                    </div>
+
+                    <!-- Filtros -->
+                    <div class="filtros-campos d-flex flex-wrap justify-content-center gap-3">
+
+                        <div class="filtro">
+                            <label for="especie" class="form-label">Especie</label>
+                            <select id="especie" class="form-select">
+                                <option value="">Todas</option>
+                                <option value="perro">Perro</option>
+                                <option value="gato">Gato</option>
+                                <option value="conejo">Conejo</option>
+                                <option value="otro">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="filtro">
+                            <label for="raza" class="form-label">Raza</label>
+                            <select id="raza" class="form-select">
+                                <option value="">Todas</option>
+                                <option value="mestizo">Mestizo</option>
+                                <option value="pastor-aleman">Pastor alemán</option>
+                                <option value="labrador">Labrador</option>
+                                <option value="siames">Siamés</option>
+                            </select>
+                        </div>
+
+                        <div class="filtro">
+                            <label for="edad" class="form-label">Edad</label>
+                            <select id="edad" class="form-select">
+                                <option value="">Todas</option>
+                                <option value="cachorro">Cachorro</option>
+                                <option value="joven">Joven</option>
+                                <option value="adulto">Adulto</option>
+                                <option value="senior">Senior</option>
+                            </select>
+                        </div>
+
+                        <div class="filtro">
+                            <label for="sexo" class="form-label">Sexo</label>
+                            <select id="sexo" class="form-select">
+                                <option value="">Todos</option>
+                                <option value="macho">Macho</option>
+                                <option value="hembra">Hembra</option>
+                            </select>
+                        </div>
+
+                        <div class="filtro">
+                            <label for="ciudad" class="form-label">Ciudad</label>
+                            <select id="ciudad" class="form-select">
+                                <option value="">Todas</option>
+                                <option value="valencia">Valencia</option>
+                                <option value="alicante">Alicante</option>
+                                <option value="castellon">Castellón</option>
+                            </select>
+                        </div>
+
+                    </div>
+
+                    <!-- Restablecer filtros -->
+                    <button type="button"
+                            class="btn-reset-filtros"
+                            onclick="limpiarFiltros()"
+                            aria-label="Restablecer filtros"
+                            title="Restablecer filtros">
+                        <i class="bi bi-arrow-clockwise"></i>
+                    </button>
+                </div>
+                
+            </article>
+
+
+
         </section>
 
     </main>

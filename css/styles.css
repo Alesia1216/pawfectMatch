@@ -121,8 +121,8 @@ body {
         color: var(--verdeClaro);
       }
     }
-
-    #pets {
+    
+    /*Filter de todos los sections -> paginacion y filtros*/
       #filter {
         #searchBar{}
         nav {
@@ -158,6 +158,5 @@ body {
             }
         }
       }
-    }
   }
 }
